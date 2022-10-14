@@ -1,0 +1,19 @@
+PATH
+  remote: .
+  specs:
+    json_pointer (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.16.3)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  json_pointer!
+  minitest
+
+BUNDLED WITH
+   2.3.22
