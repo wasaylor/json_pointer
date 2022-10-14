@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require './lib/json_pointer.rb'
+require "minitest/autorun"
+require "json_pointer"
 
 class JSONPointerTest < Minitest::Test
   def test_reference_tokens
