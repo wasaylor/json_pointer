@@ -41,7 +41,7 @@ class JSONPointerTest < Minitest::Test
   end
 
   def test_values
-    assert_equal {}, JSONPointer.new("/foo").evaluate({ "foo" => {} })
+    assert_equal({}, JSONPointer.new("/foo").evaluate({ "foo" => {} }))
     assert_equal [], JSONPointer.new("/foo").evaluate({ "foo" => [] })
     assert_equal "bar", JSONPointer.new("/foo").evaluate({ "foo" => "bar" })
     assert_equal 3.14, JSONPointer.new("/foo").evaluate({ "foo" => 3.14 })
