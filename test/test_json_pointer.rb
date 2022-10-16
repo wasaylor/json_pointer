@@ -60,7 +60,7 @@ class JSONPointerTest < Minitest::Test
     assert_equal 3.14, JSONPointer.new("/foo").evaluate({ "foo" => 3.14 })
     assert_equal true, JSONPointer.new("/foo").evaluate({ "foo" => true })
     assert_equal false, JSONPointer.new("/foo").evaluate({ "foo" => false })
-    assert_equal nil, JSONPointer.new("/foo").evaluate({ "foo" => nil })
+    assert_nil JSONPointer.new("/foo").evaluate({ "foo" => nil })
   end
 
   def test_reuse
