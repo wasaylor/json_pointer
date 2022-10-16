@@ -15,6 +15,10 @@ class JSONPointerTest < Minitest::Test
     refute_equal foo.hash, ["foo"].hash
   end
 
+  def test_to_s
+    assert_equal "/foo", JSONPointer.new("/foo").to_s
+  end
+
   def test_reference_tokens
     assert_equal ["foo", "0", "bar", "-"], JSONPointer.new("/foo/0/bar/-").reference_tokens
     assert_equal [""], JSONPointer.new("/").reference_tokens
