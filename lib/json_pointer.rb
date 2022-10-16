@@ -64,7 +64,7 @@ class JSONPointer
   alias eql? ==
 
   def hash
-    @str.hash
+    [self.class, @str].hash
   end
 
   protected

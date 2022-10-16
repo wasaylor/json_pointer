@@ -2,6 +2,19 @@ require "minitest/autorun"
 require "json_pointer"
 
 class JSONPointerTest < Minitest::Test
+  def test_equality
+    foo = JSONPointer.new("/foo")
+    foo2 = JSONPointer.new("/foo")
+
+    assert_equal foo, foo2
+    assert_equal foo.hash, foo2.hash
+
+    refute_equal foo, "/foo"
+    refute_equal foo, ["foo"]
+    refute_equal foo.hash, "/foo".hash
+    refute_equal foo.hash, ["foo"].hash
+  end
+
   def test_reference_tokens
     assert_equal ["foo", "0", "bar", "-"], JSONPointer.new("/foo/0/bar/-").reference_tokens
     assert_equal [""], JSONPointer.new("/").reference_tokens
